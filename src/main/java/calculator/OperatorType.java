@@ -1,24 +1,24 @@
 package calculator;
 
 public enum OperatorType {
-    ADD("+"),
-    SUBSTRACT("-"),
-    MULTIPLY("*"),
-    DIVIDE("/"),
-    MOD("%");
+    ADD('+'),
+    SUBSTRACT('-'),
+    MULTIPLY('*'),
+    DIVIDE('/'),
+    MOD('%');
 
-    private final String operator;
+    private final char operator;
 
-    OperatorType(String operatorType) {
+    OperatorType(char operatorType) {
         this.operator = operatorType;
     }
 
-    public static OperatorType returnOperatorType(String operator) {
+    public static OperatorType returnOperatorType(char operator) {
         try {
             // 미리 지정해둔 OperatorType 전체 순회 (.values()는 enum 에 선언된 모든 객체들을 순번대로 배열을 만든다. 주로 순회할 때 사용)
             for (OperatorType operatorType : OperatorType.values()) {
                 // 입력받은 operator 와 일치한다면 해당 enum 을 반환함
-                if (operatorType.operator.equals(operator)) {
+                if (operatorType.operator == operator) {
                     return operatorType;
                 }
             }

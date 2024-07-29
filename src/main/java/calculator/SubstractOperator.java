@@ -2,9 +2,9 @@ package calculator;
 
 public class SubstractOperator implements Operator {
 
-    public String type;
+    public char type;
 
-    public SubstractOperator(String operatorType) {
+    public SubstractOperator(char operatorType) {
         this.type = operatorType;
     }
 

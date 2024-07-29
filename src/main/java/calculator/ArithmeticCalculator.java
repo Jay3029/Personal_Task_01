@@ -4,13 +4,11 @@ import java.util.List;
 
 public class ArithmeticCalculator extends Calculator {
 
-    public String type;
-
-    public ArithmeticCalculator(List<Double> result_Arith, String operator) {
+    public ArithmeticCalculator(List<Double> result_Arith) {
         super(result_Arith);
-        this.type = operator;
     }
-    
+
+    /*
     // 연산기호에 맞는 Operator 생성
     private void callOperator(String operator) {
 
@@ -25,9 +23,33 @@ public class ArithmeticCalculator extends Calculator {
             default: System.out.println();
         };
     }
+    */
+    public double calculate_Arith(char operator, int num1, int num2) {
+        OperatorType operatorType = OperatorType.returnOperatorType(operator);
 
-    public void calculate_Arith(String operator, double num1, double num2) {
-        return callOperator(operator).;
+        switch (operatorType) {
+            case ADD: {
+                AddOperator addop = new AddOperator(operator);
+                addop.operate(num1, num2);
+            }
+            case SUBSTRACT: {
+                SubstractOperator subop = new SubstractOperator(operator);
+                subop.operate(num1, num2);
+            }
+            case MULTIPLY: {
+                MultiplyOperator mulop = new MultiplyOperator(operator);
+                mulop.operate(num1, num2);
+            }
+            case DIVIDE: {
+                DivideOperator divop = new DivideOperator(operator);
+                divop.operate(num1, num2);
+            }
+            case MOD: {
+                ModOperator modop = new ModOperator(operator);
+                modop.operate(num1, num2);
+            }
+        };
+        return 0;
     }
 
 

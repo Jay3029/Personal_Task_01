@@ -2,9 +2,9 @@ package calculator;
 
 public class AddOperator implements Operator {
 
-    public String type;
+    public char type;
 
-    public AddOperator(String operatorType) {
+    public AddOperator(char operatorType) {
         this.type = operatorType;
     }
 

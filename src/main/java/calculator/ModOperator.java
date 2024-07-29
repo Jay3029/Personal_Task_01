@@ -2,9 +2,9 @@ package calculator;
 
 public class ModOperator implements Operator {
 
-    public String type;
+    public char type;
 
-    public ModOperator(String operatorType) {
+    public ModOperator(char operatorType) {
         this.type = operatorType;
     }
 

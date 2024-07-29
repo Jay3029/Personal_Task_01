@@ -2,9 +2,9 @@ package calculator;
 
 public class MultiplyOperator implements Operator {
 
-    public String type;
+    public char type;
 
-    public MultiplyOperator(String operatorType) {
+    public MultiplyOperator(char operatorType) {
         this.type = operatorType;
     }
 

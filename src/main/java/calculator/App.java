@@ -1,5 +1,7 @@
 package calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -11,6 +13,9 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
 
+        ArithmeticCalculator arithmeticCalculator = new ArithmeticCalculator(new ArrayList<>());
+        CircleCalculator circleCalculator = new CircleCalculator(new ArrayList<>());
+
         // 1회 시행 후 반복할지 안할지 결정하기 위해 do-while 문 사용
         do {
 
@@ -21,14 +26,14 @@ public class App {
 
                 // Scanner를 사용해서 입력값 받기
                 System.out.print("첫 번째 숫자(양의 정수)를 입력하세요: ");
-                double firstNum = sc.nextInt();
+                int num1 = sc.nextInt();
                 System.out.print("두 번째 숫자(양의 정수)를 입력하세요: ");
-                double secondNum = sc.nextInt();
+                int num2 = sc.nextInt();
                 System.out.print("사칙연산 기호를 입력하세요: "); // % 까지 가능
-                String operator = sc.next();
+                char operator = sc.next().charAt(0);
 
                 // 사칙연산 수행
-                double result = arithmeticCalculator.calculate_Arith(operator, firstNum, secondNum);
+                double result = arithmeticCalculator.calculate_Arith(operator, num1, num2);
                 System.out.println("사칙 연산의 결과는 " + result + " 입니다.");
 
                 // 계산 결과 저장

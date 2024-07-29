@@ -2,9 +2,9 @@ package calculator;
 
 public class DivideOperator implements Operator {
 
-    public String type;
+    public char type;
 
-    public DivideOperator(String operatorType) {
+    public DivideOperator(char operatorType) {
         this.type = operatorType;
     }
 
