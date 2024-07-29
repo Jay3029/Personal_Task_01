@@ -1,7 +1,7 @@
 package calculator;
 
 import calculator.Operator.*;
-
+import java.util.stream.Collectors;
 import java.util.List;
 
 public class ArithmeticCalculator<T extends Number> extends Calculator {
@@ -52,4 +52,13 @@ public class ArithmeticCalculator<T extends Number> extends Calculator {
             System.out.println("사칙연산 결과 = " + result_Arith);
         }
     }
+
+
+    // 람다 스트림
+    public void filteredResultList(double inputNum) {
+        super.getResult().stream()
+                .filter(result -> result > inputNum)
+                .forEach(result -> System.out.print(result));
+    }
+
 }

@@ -36,4 +36,11 @@ public class CircleCalculator extends Calculator {
         }
     }
 
+    // 람다 스트림
+    public void filteredResultList(double inputNum) {
+        super.getResult().stream()
+                .filter(result -> result > inputNum)
+                .forEach(result -> System.out.print(result));
+    }
+
 }

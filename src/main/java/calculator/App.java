@@ -68,6 +68,8 @@ public class App {
                             if (Objects.equals(sc.next(), "lambda")) {
                                 System.out.println("기준 값을 입력하세요: ");
                                 double standardNum = sc.nextDouble();
+                                System.out.print("입력값보다 큰 결과값: ");
+                                arithmeticCalculator.filteredResultList(standardNum);
                             }
                             break;
                         }
@@ -128,6 +130,8 @@ public class App {
                             if (Objects.equals(sc.next(), "lambda")) {
                                 System.out.println("기준 값을 입력하세요: ");
                                 double standardNum = sc.nextDouble();
+                                System.out.print("입력값보다 큰 결과값: ");
+                                circleCalculator.filteredResultList(standardNum);
                             }
                             break;
                         }

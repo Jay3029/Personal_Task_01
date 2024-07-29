@@ -40,4 +40,7 @@ public abstract class Calculator {
     // 리스트 조회
     public abstract void inquiryResultList();
 
+    // 람다 스트림
+
+
 }
