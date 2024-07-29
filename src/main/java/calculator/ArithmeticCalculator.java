@@ -1,55 +1,33 @@
 package calculator;
 
+import calculator.Operator.*;
+
 import java.util.List;
 
-public class ArithmeticCalculator extends Calculator {
+public class ArithmeticCalculator<T extends Number> extends Calculator {
 
-    public ArithmeticCalculator(List<Double> result_Arith) {
+    public Class<T> type;
+
+    public ArithmeticCalculator(List<Double> result_Arith, Class<T> type) {
         super(result_Arith);
+        this.type = type; //
     }
 
-    /*
-    // 연산기호에 맞는 Operator 생성
-    private void callOperator(String operator) {
-
-        OperatorType operatorType = OperatorType.returnOperatorType(operator);
-
-        switch (operatorType) {
-            case ADD: new AddOperator(operator);
-            case SUBSTRACT: new SubstractOperator(operator);
-            case MULTIPLY: new MultiplyOperator(operator);
-            case DIVIDE: new DivideOperator(operator);
-            case MOD: new ModOperator(operator);
-            default: System.out.println();
-        };
+    public double calculate_Arith(char operator, T num1, T num2) {
+        T result = convertOperator(operator).operate(num1, num2);
+        return result.doubleValue();
     }
-    */
-    public double calculate_Arith(char operator, int num1, int num2) {
-        OperatorType operatorType = OperatorType.returnOperatorType(operator);
 
-        switch (operatorType) {
-            case ADD: {
-                AddOperator addop = new AddOperator(operator);
-                return addop.operate(num1, num2);
-            }
-            case SUBSTRACT: {
-                SubstractOperator subop = new SubstractOperator(operator);
-                return subop.operate(num1, num2);
-            }
-            case MULTIPLY: {
-                MultiplyOperator mulop = new MultiplyOperator(operator);
-                return mulop.operate(num1, num2);
-            }
-            case DIVIDE: {
-                DivideOperator divop = new DivideOperator(operator);
-                return divop.operate(num1, num2);
-            }
-            case MOD: {
-                ModOperator modop = new ModOperator(operator);
-                return modop.operate(num1, num2);
-            }
+
+    private Operator<T> convertOperator(char operator) {
+        OperatorType operatorType = OperatorType.returnOperatorType(operator);
+        return switch (operatorType) {
+            case ADD -> new AddOperator<>(type);
+            case SUBTRACT -> new SubtractOperator<>(type);
+            case MULTIPLY -> new MultiplyOperator<>(type);
+            case DIVIDE -> new DivideOperator<>(type);
+            case MOD -> new ModOperator<>(type);
         };
-        return 0;
     }
 
 

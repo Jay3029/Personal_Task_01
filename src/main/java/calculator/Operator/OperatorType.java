@@ -1,8 +1,8 @@
-package calculator;
+package calculator.Operator;
 
 public enum OperatorType {
     ADD('+'),
-    SUBSTRACT('-'),
+    SUBTRACT('-'),
     MULTIPLY('*'),
     DIVIDE('/'),
     MOD('%');

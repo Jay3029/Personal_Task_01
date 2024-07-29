@@ -15,6 +15,21 @@ public class CircleCalculator extends Calculator {
     }
 
     @Override
+    public List<Double> getResult() {
+        return super.getResult();
+    }
+
+    @Override
+    public void setResult(double result) {
+        super.setResult(result);
+    }
+
+    @Override
+    public void removeResultList(int idx) {
+        super.removeResultList(idx);
+    }
+
+    @Override
     public void inquiryResultList() {
         for (Double circleResult : super.getResult()) {
             System.out.println("원의 넚이 = " + circleResult);
