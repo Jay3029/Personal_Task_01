@@ -29,7 +29,7 @@ public class App {
                 int num1 = sc.nextInt();
                 System.out.print("두 번째 숫자(양의 정수)를 입력하세요: ");
                 int num2 = sc.nextInt();
-                System.out.print("사칙연산 기호를 입력하세요: "); // % 까지 가능
+                System.out.print("사칙연산 기호(+,-,*,/,%)를 입력하세요: ");
                 char operator = sc.next().charAt(0);
 
                 // 사칙연산 수행
@@ -67,7 +67,10 @@ public class App {
                 System.out.println("구하고자 하는 원의 반지름을 입력하세요: ");
                 int radius = sc.nextInt();
 
+                // 반지름을 통해 원의 넓이 구하기
                 double circleArea = circleCalculator.calculate_Circle(radius);
+
+                // 원의 넓이 저장
                 circleCalculator.getResult().add(circleArea);
 
                 // 원의 넓이 결과값 출력

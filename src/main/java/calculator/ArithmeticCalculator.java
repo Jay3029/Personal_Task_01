@@ -30,23 +30,23 @@ public class ArithmeticCalculator extends Calculator {
         switch (operatorType) {
             case ADD: {
                 AddOperator addop = new AddOperator(operator);
-                addop.operate(num1, num2);
+                return addop.operate(num1, num2);
             }
             case SUBSTRACT: {
                 SubstractOperator subop = new SubstractOperator(operator);
-                subop.operate(num1, num2);
+                return subop.operate(num1, num2);
             }
             case MULTIPLY: {
                 MultiplyOperator mulop = new MultiplyOperator(operator);
-                mulop.operate(num1, num2);
+                return mulop.operate(num1, num2);
             }
             case DIVIDE: {
                 DivideOperator divop = new DivideOperator(operator);
-                divop.operate(num1, num2);
+                return divop.operate(num1, num2);
             }
             case MOD: {
                 ModOperator modop = new ModOperator(operator);
-                modop.operate(num1, num2);
+                return modop.operate(num1, num2);
             }
         };
         return 0;
