@@ -1,6 +1,8 @@
 # Personal_Task_01
 계산기 제작
 
+main: level 2 까지 완성  /  master: level 3의 3-2까지 일단은...
+
 <Level 1>
 
 1-1 Scanner를 사용하여 양의 정수 2개(0 포함)를 전달
