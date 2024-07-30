@@ -58,7 +58,7 @@ public class ArithmeticCalculator<T extends Number> extends Calculator {
     public void filteredResultList(double inputNum) {
         super.getResult().stream()
                 .filter(result -> result > inputNum)
-                .forEach(result -> System.out.print(result));
+                .forEach(result -> System.out.println(result));
     }
 
 }
